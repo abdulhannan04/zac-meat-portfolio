@@ -1,0 +1,69 @@
+---
+import { siteConfig } from '../config/site';
+---
+
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact__shape contact__shape--one" aria-hidden="true"></div>
+  <div class="contact__shape contact__shape--two" aria-hidden="true"></div>
+
+  <div class="container contact__grid">
+    <div class="contact__intro" data-reveal>
+      <p class="eyebrow eyebrow--light">Get in Touch</p>
+      <h2 id="contact-title">Let’s talk about your Halal meat requirements.</h2>
+      <p>
+        Contact the ZAC Meat & Food team directly by telephone or email.
+      </p>
+
+      <div class="contact__actions">
+        <a class="button button--accent" href={`mailto:${siteConfig.email}`}>
+          Email ZAC
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M3 5h14v10H3zM3 6l7 5 7-5"></path>
+          </svg>
+        </a>
+        <a class="button button--ghost" href={siteConfig.contacts[0].phoneHref}>
+          Call the CEO
+        </a>
+      </div>
+    </div>
+
+    <address class="contact-card" data-reveal>
+      <div class="contact-card__section">
+        <span class="contact-card__label">Direct contacts</span>
+        <ul class="contact-list">
+          {
+            siteConfig.contacts.map((contact) => (
+              <li>
+                <div>
+                  <span>{contact.role}</span>
+                  <strong>{contact.name}</strong>
+                </div>
+                {'phone' in contact && (
+                  <a href={contact.phoneHref} aria-label={`Call ${contact.name} at ${contact.phone}`}>
+                    {contact.phone}
+                  </a>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="contact-card__section contact-card__section--details">
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16v12H4zM4 7l8 6 8-6"></path>
+          </svg>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21s7-6.2 7-12A7 7 0 0 0 5 9c0 5.8 7 12 7 12Z"></path>
+            <circle cx="12" cy="9" r="2.5"></circle>
+          </svg>
+          <span>{siteConfig.address}</span>
+        </div>
+      </div>
+    </address>
+  </div>
+</section>

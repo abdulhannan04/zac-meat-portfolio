@@ -1,0 +1,54 @@
+---
+import { promisePoints, trustStatement } from '../config/content';
+---
+
+<section class="section promise" id="quality" aria-labelledby="promise-title">
+  <div class="container">
+    <div class="promise__intro" data-reveal>
+      <div>
+        <p class="eyebrow eyebrow--light">Our Promise</p>
+        <h2 id="promise-title">High-quality service, nurtured with care.</h2>
+      </div>
+      <p>
+        We provide high-quality service and nurture our products with love.
+      </p>
+    </div>
+
+    <div class="promise__points">
+      {
+        promisePoints.map((point, index) => (
+          <article class="promise-point" data-reveal>
+            <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <h3>{point}</h3>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="trust-feature" data-reveal>
+      <picture class="trust-feature__media">
+        <source
+          type="image/webp"
+          srcset="
+            /assets/images/livestock-landscape-900.webp   900w,
+            /assets/images/livestock-landscape-1400.webp 1400w
+          "
+          sizes="(min-width: 900px) 48vw, 100vw"
+        />
+        <img
+          src="/assets/images/livestock-landscape-1400.webp"
+          width="1400"
+          height="563"
+          alt="Cattle grazing in a field"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="trust-feature__content">
+        <p class="eyebrow">Trusted Nationwide and Beyond</p>
+        <h3>A reliable choice for customers in Pakistan and around the globe.</h3>
+        <p>{trustStatement}</p>
+      </div>
+    </div>
+  </div>
+</section>

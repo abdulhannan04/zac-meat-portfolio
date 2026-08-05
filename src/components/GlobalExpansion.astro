@@ -1,0 +1,61 @@
+---
+import { expansionMarkets, globalExpansion } from '../config/content';
+---
+
+<section class="section global-expansion" id="global-reach" aria-labelledby="global-title">
+  <div class="container global-expansion__grid">
+    <div class="global-expansion__content" data-reveal>
+      <p class="eyebrow">Global Expansion</p>
+      <h2 id="global-title">Delivering the best taste of Pakistan to the world around.</h2>
+      <p>{globalExpansion}</p>
+
+      <ul class="market-list" aria-label="International markets named in our expansion focus">
+        {
+          expansionMarkets.map((market) => (
+            <li>
+              <span aria-hidden="true"></span>
+              {market}
+            </li>
+          ))
+        }
+      </ul>
+
+      <a class="text-link" href="#contact">
+        Start a conversation
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M3 10h14M11 4l6 6-6 6"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="global-expansion__visual" data-reveal>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            /assets/images/global-meat-selection-900.webp   900w,
+            /assets/images/global-meat-selection-1400.webp 1400w
+          "
+          sizes="(min-width: 900px) 48vw, 100vw"
+        />
+        <img
+          src="/assets/images/global-meat-selection-1400.webp"
+          width="1400"
+          height="932"
+          alt="A selection of meat products arranged on a dark surface"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="global-expansion__orbit" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="global-expansion__label">
+        <span>Global</span>
+        <strong>Partnerships</strong>
+      </div>
+    </div>
+  </div>
+</section>

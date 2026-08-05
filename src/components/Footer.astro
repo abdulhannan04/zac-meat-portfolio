@@ -1,0 +1,48 @@
+---
+import { navigation, siteConfig } from '../config/site';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__top">
+    <div class="site-footer__brand">
+      <a href="#home" aria-label="ZAC Meat & Food home">
+        <img
+          src="/assets/logo/zac-logo-white.png"
+          width="1000"
+          height="516"
+          alt="ZAC Meat & Food"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <p>ZAC Meat & Food — Delivering Excellence, One Cut at a Time</p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer navigation">
+      <span>Explore</span>
+      <ul>
+        {
+          navigation.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="site-footer__contact">
+      <span>Contact</span>
+      <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+      <a href={siteConfig.contacts[0].phoneHref}>{siteConfig.contacts[0].phone}</a>
+      <p>{siteConfig.address}</p>
+    </div>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p>© {currentYear} {siteConfig.name}</p>
+    <a href="#home">Back to top <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>

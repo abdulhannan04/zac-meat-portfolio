@@ -1,0 +1,109 @@
+---
+import { navigation } from '../config/site';
+---
+
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="#home" aria-label="ZAC Meat & Food home">
+      <img
+        src="/assets/logo/zac-logo-white.png"
+        width="1000"
+        height="516"
+        alt="ZAC Meat & Food"
+        decoding="async"
+      />
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <ul>
+        {
+          navigation.map((item) => (
+            <li>
+              <a class="nav-link" href={item.href} data-nav-link>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <a class="button button--header desktop-contact" href="#contact">Get in Touch</a>
+
+    <details class="mobile-menu" data-mobile-menu>
+      <summary aria-label="Open navigation menu">
+        <span class="mobile-menu__icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </summary>
+      <nav class="mobile-menu__panel" aria-label="Mobile navigation">
+        <ul>
+          {
+            navigation.map((item) => (
+              <li>
+                <a class="mobile-nav-link" href={item.href} data-mobile-link>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <a class="button button--light mobile-menu__cta" href="#contact" data-mobile-link>
+          Get in Touch
+        </a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-header]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+  const mobileLinks = document.querySelectorAll('[data-mobile-link]');
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  const sections = document.querySelectorAll('main section[id]');
+
+  const updateHeader = () => {
+    header?.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.removeAttribute('open');
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileMenu?.hasAttribute('open')) {
+      mobileMenu.removeAttribute('open');
+      mobileMenu.querySelector('summary')?.focus();
+    }
+  });
+
+  const navigationObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+
+      navLinks.forEach((link) => {
+        const active = link.getAttribute('href') === `#${visible.target.id}`;
+        if (active) {
+          link.setAttribute('aria-current', 'location');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    },
+    { rootMargin: '-25% 0px -65% 0px', threshold: [0, 0.2, 0.6] },
+  );
+
+  sections.forEach((section) => navigationObserver.observe(section));
+</script>

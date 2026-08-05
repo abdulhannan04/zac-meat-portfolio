@@ -1,0 +1,21 @@
+---
+import { testimonial } from '../config/content';
+---
+
+<section class="testimonial" aria-labelledby="testimonial-title">
+  <div class="testimonial__texture" aria-hidden="true"></div>
+  <div class="container testimonial__inner" data-reveal>
+    <div class="testimonial__mark" aria-hidden="true">“</div>
+    <div>
+      <p class="eyebrow eyebrow--light">Customer Testimonial</p>
+      <h2 id="testimonial-title" class="visually-hidden">What our customer says</h2>
+      <blockquote>
+        <p>{testimonial.quote}</p>
+        <footer>
+          <cite>{testimonial.author}</cite>
+          <span>{testimonial.country}</span>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</section>

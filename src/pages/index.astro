@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import MissionVision from '../components/MissionVision.astro';
+import Promise from '../components/Promise.astro';
+import Certifications from '../components/Certifications.astro';
+import Products from '../components/Products.astro';
+import Testimonial from '../components/Testimonial.astro';
+import GlobalExpansion from '../components/GlobalExpansion.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout preloadHero>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <About />
+    <MissionVision />
+    <Promise />
+    <Certifications />
+    <Products />
+    <Testimonial />
+    <GlobalExpansion />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

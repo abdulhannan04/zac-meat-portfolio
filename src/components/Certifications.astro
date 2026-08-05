@@ -1,0 +1,35 @@
+---
+import { certifications } from '../config/content';
+---
+
+<section class="section certifications" aria-labelledby="certifications-title">
+  <div class="container">
+    <div class="section-heading certifications__heading" data-reveal>
+      <div>
+        <p class="eyebrow">Quality Marks</p>
+        <h2 id="certifications-title">Certifications shown in our company portfolio.</h2>
+      </div>
+      <p>
+        The marks below are reproduced directly from the supplied ZAC Meat & Food
+        company profile.
+      </p>
+    </div>
+
+    <div class="certifications__grid" role="list">
+      {
+        certifications.map((certification, index) => (
+          <figure class="certification-card" role="listitem" data-reveal>
+            <img
+              src={certification.image}
+              width={certification.width}
+              height={certification.height}
+              alt={`Certification mark ${index + 1} shown in the ZAC Meat & Food company portfolio`}
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+import { aboutParagraphs } from '../config/content';
+---
+
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="container about__grid">
+    <div class="about__visual" data-reveal>
+      <div class="about__image-wrap">
+        <img
+          src="/assets/images/livestock-collage.webp"
+          width="581"
+          height="581"
+          alt="Livestock and cattle imagery from the ZAC Meat & Food company portfolio"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="about__stamp" aria-hidden="true">
+        <span>Quality</span>
+        <span>Hygiene</span>
+        <span>Halal</span>
+      </div>
+    </div>
+
+    <div class="about__content" data-reveal>
+      <p class="eyebrow">About Us</p>
+      <h2 id="about-title">Expertise built around quality and Halal integrity.</h2>
+      {aboutParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+      <div class="about__categories" aria-label="Product specialities named in our portfolio">
+        <span>Beef</span>
+        <span>Mutton</span>
+        <span>Lamb</span>
+        <span>Goat</span>
+        <span>Poultry</span>
+      </div>
+    </div>
+  </div>
+</section>

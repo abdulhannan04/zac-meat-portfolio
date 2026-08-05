@@ -1,0 +1,47 @@
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <picture class="hero__media">
+    <source
+      type="image/webp"
+      srcset="
+        /assets/images/livestock-hero-800.webp   800w,
+        /assets/images/livestock-hero-1200.webp 1200w,
+        /assets/images/livestock-hero-1655.webp 1655w
+      "
+      sizes="100vw"
+    />
+    <img
+      src="/assets/images/livestock-hero-1655.webp"
+      width="1655"
+      height="843"
+      alt="Cattle gathered in a pasture"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__curve" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="eyebrow eyebrow--light">ZAC Meat & Food</p>
+      <h1 id="hero-title">Your Global Halal <span>Meat Partner</span></h1>
+      <p class="hero__lede">Ensuring Quality, Hygiene & Halal Integrity in Every Cut</p>
+      <div class="hero__actions">
+        <a class="button button--accent" href="#products">
+          Explore Our Products
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="m7 4 6 6-6 6"></path>
+          </svg>
+        </a>
+        <a class="button button--ghost" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+
+    <a class="hero__scroll" href="#about" aria-label="Scroll to About Us">
+      <span>Discover ZAC</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m6 9 6 6 6-6"></path>
+      </svg>
+    </a>
+  </div>
+</section>

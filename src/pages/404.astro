@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<BaseLayout
+  title={`Page Not Found | ${siteConfig.name}`}
+  description="The requested page could not be found."
+  noindex
+>
+  <main class="not-found" id="main-content">
+    <div class="not-found__card">
+      <img
+        src="/assets/logo/zac-logo-white.png"
+        width="1000"
+        height="516"
+        alt="ZAC Meat & Food"
+      />
+      <p class="eyebrow eyebrow--light">404</p>
+      <h1>That page could not be found.</h1>
+      <p>Return to the ZAC Meat & Food company portfolio.</p>
+      <a class="button button--accent" href="/">Back to Home</a>
+    </div>
+  </main>
+</BaseLayout>

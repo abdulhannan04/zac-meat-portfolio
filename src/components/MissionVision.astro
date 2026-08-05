@@ -1,0 +1,51 @@
+---
+import { mission, vision } from '../config/content';
+---
+
+<section class="section mission-vision" id="mission" aria-labelledby="mission-title">
+  <div class="container">
+    <div class="section-heading section-heading--center" data-reveal>
+      <p class="eyebrow">Purpose & Direction</p>
+      <h2 id="mission-title">A trusted Halal meat partner for global markets.</h2>
+    </div>
+
+    <div class="mission-vision__grid">
+      <article class="purpose-card purpose-card--mission" data-reveal>
+        <div class="purpose-card__number" aria-hidden="true">01</div>
+        <div class="purpose-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8"></circle>
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M12 2v3M22 12h-3M12 22v-3M2 12h3"></path>
+          </svg>
+        </div>
+        <h3>Our Mission</h3>
+        <p>{mission}</p>
+      </article>
+
+      <div class="mission-vision__figure" aria-hidden="true" data-reveal>
+        <div class="mission-vision__halo"></div>
+        <img
+          src="/assets/images/mission-cow.webp"
+          width="760"
+          height="1084"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <article class="purpose-card purpose-card--vision" data-reveal>
+        <div class="purpose-card__number" aria-hidden="true">02</div>
+        <div class="purpose-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+            <circle cx="12" cy="12" r="2.75"></circle>
+          </svg>
+        </div>
+        <h3>Our Vision</h3>
+        <p>{vision}</p>
+      </article>
+    </div>
+  </div>
+</section>

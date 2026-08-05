@@ -1,0 +1,16 @@
+{
+  "name": "ZAC Meat & Food",
+  "short_name": "ZAC",
+  "description": "ZAC Meat & Food company portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf7ef",
+  "theme_color": "#12392a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

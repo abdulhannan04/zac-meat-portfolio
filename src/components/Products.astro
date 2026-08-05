@@ -1,0 +1,50 @@
+---
+import { productGroups } from '../config/content';
+---
+
+<section class="section products" id="products" aria-labelledby="products-title">
+  <div class="container">
+    <div class="section-heading products__heading" data-reveal>
+      <div>
+        <p class="eyebrow">Our Products</p>
+        <h2 id="products-title">A focused portfolio of meat products and cuts.</h2>
+      </div>
+      <p>
+        Explore the product categories presented in the ZAC Meat & Food company
+        portfolio.
+      </p>
+    </div>
+
+    <div class="products__groups">
+      {
+        productGroups.map((group, groupIndex) => (
+          <section class="product-group" aria-labelledby={`${group.id}-title`}>
+            <header class="product-group__header" data-reveal>
+              <span>{group.eyebrow}</span>
+              <h3 id={`${group.id}-title`}>{group.title}</h3>
+              <div aria-hidden="true">{String(groupIndex + 1).padStart(2, '0')}</div>
+            </header>
+
+            <div class:list={['product-grid', { 'product-grid--compact': group.id === 'lamb-cuts' }]}>
+              {group.products.map((product) => (
+                <article class="product-card" data-reveal>
+                  <div class="product-card__image">
+                    <img
+                      src={product.image}
+                      width={product.width}
+                      height={product.height}
+                      alt={`${product.name} product image from the ZAC Meat & Food company portfolio`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <h4>{product.name}</h4>
+                </article>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</section>
