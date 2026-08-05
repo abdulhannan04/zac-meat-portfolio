@@ -1,17 +1,20 @@
 ---
-import { navigation } from '../config/site';
+import { navigation, siteConfig } from '../config/site';
 ---
 
 <header class="site-header" data-header>
   <div class="container site-header__inner">
     <a class="brand" href="#home" aria-label="ZAC Meat & Food home">
-      <img
-        src="/assets/logo/zac-logo-white.png"
-        width="1000"
-        height="516"
-        alt="ZAC Meat & Food"
-        decoding="async"
-      />
+      <span class="brand__mark" aria-hidden="true">
+        <img
+          src="/assets/logo/zac-logo-white.png"
+          width="1000"
+          height="516"
+          alt=""
+          decoding="async"
+        />
+      </span>
+      <span class="brand__name">{siteConfig.name}</span>
     </a>
 
     <nav class="desktop-nav" aria-label="Primary navigation">

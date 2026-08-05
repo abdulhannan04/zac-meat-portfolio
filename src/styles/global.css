@@ -324,13 +324,28 @@ section[id] {
 
 .brand {
   display: flex;
-  width: 5.5rem;
   min-height: 2.8rem;
   align-items: center;
+  gap: clamp(0.45rem, 1.6vw, 0.75rem);
 }
 
-.brand img {
+.brand__mark {
+  width: clamp(4.25rem, 22vw, 5.5rem);
+  flex: 0 0 auto;
+}
+
+.brand__mark img {
   width: 100%;
+}
+
+.brand__name {
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: clamp(0.72rem, 3.2vw, 0.92rem);
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .desktop-nav,
@@ -1667,8 +1682,12 @@ section[id] {
     --header-height: 5.5rem;
   }
 
-  .brand {
+  .brand__mark {
     width: 6rem;
+  }
+
+  .brand__name {
+    font-size: 0.95rem;
   }
 
   .mobile-menu {
