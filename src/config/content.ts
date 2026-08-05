@@ -34,14 +34,54 @@ export const trustStatement =
   'ZAC Meat & Food has earned the trust of customers not only across Pakistan but also around the globe. By consistently delivering premium-quality meats that meet the highest hygiene and nutritional standards, we have become a reliable choice for households, businesses, and distributors worldwide.';
 
 export const certifications = [
-  { image: '/assets/certifications/certification-01.png', width: 99, height: 98 },
-  { image: '/assets/certifications/certification-02.png', width: 88, height: 98 },
-  { image: '/assets/certifications/certification-03.png', width: 101, height: 96 },
-  { image: '/assets/certifications/certification-04.png', width: 100, height: 91 },
-  { image: '/assets/certifications/certification-05.png', width: 114, height: 92 },
-  { image: '/assets/certifications/certification-06.png', width: 89, height: 98 },
-  { image: '/assets/certifications/certification-07.png', width: 100, height: 98 },
-  { image: '/assets/certifications/certification-08.png', width: 79, height: 98 },
+  {
+    name: 'International Halal Certification',
+    image: '/assets/certifications/certification-01.png',
+    width: 356,
+    height: 352,
+  },
+  {
+    name: 'Government of Pakistan',
+    image: '/assets/certifications/certification-02.png',
+    width: 338,
+    height: 389,
+  },
+  {
+    name: 'OHSAS 18001',
+    image: '/assets/certifications/certification-03.png',
+    width: 371,
+    height: 354,
+  },
+  {
+    name: 'ISO 14001 Environmental Management System',
+    image: '/assets/certifications/certification-04.png',
+    width: 352,
+    height: 324,
+  },
+  {
+    name: 'Quality certification',
+    image: '/assets/certifications/certification-05.png',
+    width: 353,
+    height: 299,
+  },
+  {
+    name: 'HACCP Certified',
+    image: '/assets/certifications/certification-06.png',
+    width: 317,
+    height: 353,
+  },
+  {
+    name: 'ACERTA ISO 22000:2018 Certified',
+    image: '/assets/certifications/certification-07.png',
+    width: 352,
+    height: 350,
+  },
+  {
+    name: 'Pakistan Standards',
+    image: '/assets/certifications/certification-08.png',
+    width: 304,
+    height: 361,
+  },
 ] as const;
 
 export const productGroups: ProductGroup[] = [

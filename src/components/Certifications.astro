@@ -2,7 +2,11 @@
 import { certifications } from '../config/content';
 ---
 
-<section class="section certifications" aria-labelledby="certifications-title">
+<section
+  class="section certifications"
+  id="certifications"
+  aria-labelledby="certifications-title"
+>
   <div class="container">
     <div class="section-heading certifications__heading" data-reveal>
       <div>
@@ -17,13 +21,13 @@ import { certifications } from '../config/content';
 
     <div class="certifications__grid" role="list">
       {
-        certifications.map((certification, index) => (
+        certifications.map((certification) => (
           <figure class="certification-card" role="listitem" data-reveal>
             <img
               src={certification.image}
               width={certification.width}
               height={certification.height}
-              alt={`Certification mark ${index + 1} shown in the ZAC Meat & Food company portfolio`}
+              alt={`${certification.name} mark shown in the ZAC Meat & Food company portfolio`}
               loading="lazy"
               decoding="async"
             />
